@@ -187,3 +187,18 @@ def libri_tts(root_path, meta_files=None):
     for item in items:
         assert os.path.exists(item[1]), f" [!] wav file is not exist - {item[1]}"
     return items
+
+
+def hascheck(root_path, meta_file):
+    """Normalizes the Hascheck meta data file to TTS format."""
+    txt_file = os.path.join(root_path, meta_file)
+    items = []
+    speaker_name = "hascheck"
+    regex = re.compile(r'^\( (\w+) "(.+)" \)$')
+    # with open('Hascheck_Voice/domitran_utf8.txt') as ttf:
+    with open(txt_file, 'r') as ttf:
+        for line in ttf:
+            filename, text = regex.match(line).groups()
+            wav_file = os.path.join(root_path, 'Hascheck Voice3 - sve snimke', filename + '.wav')
+            items.append([text, wav_file, speaker_name])
+    return items

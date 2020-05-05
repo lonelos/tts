@@ -267,7 +267,8 @@ def train(model, criterion, criterion_st, optimizer, optimizer_st, scheduler,
                 }
                 tb_logger.tb_train_iter_stats(global_step, iter_stats)
 
-            if global_step % c.save_step == 0:
+            #if global_step % c.save_step == 0:
+            if global_step % 5000 == 0:
                 if c.checkpoint:
                     # save model
                     save_checkpoint(model, optimizer, optimizer_st,
@@ -467,7 +468,7 @@ def evaluate(model, criterion, criterion_st, ap, global_step, epoch):
             tb_logger.tb_eval_stats(global_step, epoch_stats)
             tb_logger.tb_eval_figures(global_step, eval_figures)
 
-    if args.rank == 0 and epoch > c.test_delay_epochs:
+    if args.rank == 0 and epoch > c.test_delay_epochs and (global_step % 1000 == 0):
         if c.test_sentences_file is None:
             test_sentences = [
                 "It took me quite a long time to develop a voice, and now that I have it I'm not going to be silent.",

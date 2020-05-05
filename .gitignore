@@ -128,3 +128,5 @@ tests/outputs/*
 TODO.txt
 .vscode/*
 data/*
+mozilla_us_phonemes_2_1/
+temp_build/
