@@ -123,7 +123,7 @@
         [
             {
                 "name": "hascheck",
-                "path": "../hascheck_eduardo",
+                "path": "../Hascheck_Voice",
                 "meta_file_train": "domitran_utf8.txt",
                 "meta_file_val": null
             }
