@@ -136,9 +136,9 @@
         [
             {
                 "name": "hascheck",
-                "path": "../hascheck_eduardo",
-                "meta_file_train": "domitran_utf8.txt",
-                "meta_file_val": null
+                "path": "/storage/hrt3",
+                "meta_file_train": "domitran_utf8_train.txt",
+                "meta_file_val": "domitran_utf8_val.txt"
             }
         ]
 
